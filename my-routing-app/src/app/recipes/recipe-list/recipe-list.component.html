@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-xs-12">
+    <a class="btn btn-success">New Recipe</a>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+      <ul>
+        <p class ="t1"> compile!</p>
+        <li class="listE" *ngFor="let ud of recipes">
+            <rb-recipe-item [recipe]="ud" (click) = "onSelected(ud)"></rb-recipe-item>
+        </li>
+    </ul>
+    
+  </div>
+</div>
+

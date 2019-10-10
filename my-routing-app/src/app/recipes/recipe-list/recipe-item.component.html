@@ -1,0 +1,21 @@
+<a href="#" class="list-group-item clearfix">
+  <div class="pull-left" cc>
+    <h4 class="list-group-item-heading">{{recipe.name}}</h4>
+    <p class="list-group-item-text">{{recipe.description | summary}}</p>
+    <p> OfferDate - {{recipe.offerDate | date: "dd/MM/yy" }}</p>
+    <p> Expires - {{recipe.offerExpireDate | date: "MM/yy"}}</p>
+    <p> Price: {{recipe.price |  currency:'EUR'}}</p>
+  </div>
+  <span class="pull-right">
+      <!-- <input type="hidden" value="{{recipe.likes}}" [(ngModel)]="totalLikes"> -->
+      <img class="img-responsive recipeImg"
+           src="{{recipe.imagePath}}"
+           style="max-height: 50px;"/>
+        <i
+        class="glyphicon glyphicon-heart"
+        [class.highlighted] = "iLike"
+         (click)="onclick()">
+        </i>
+        <span> {{recipe.likes + totalLikes}} </span>
+  </span>
+</a>
